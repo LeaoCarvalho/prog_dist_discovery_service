@@ -42,16 +42,16 @@ spring:
               maxBackoff: 500ms
               factor: 2
               basedOnPreviousValue: false
-      routes:
-        - id: parse-expression
-          uri: lb://parser/parse
-          predicates: 
-          - Path=/parse/
-          filters:
-          - name: CircuitBreaker
-            args: 
-              name: parsecircuitbreaker
-              slidingWindowSize: 2
-              permittedNumberOfCallsInHalfOpenState: 1
-              failureRateThreshold: 50
-              waitDurationInOpenState: 5000
+      # routes:
+      #   - id: parse-expression
+      #     uri: lb://parser/parse
+      #     predicates: 
+      #     - Path=/parse/
+      #     filters:
+      #     - name: CircuitBreaker
+      #       args: 
+      #         name: parsecircuitbreaker
+      #         slidingWindowSize: 2
+      #         permittedNumberOfCallsInHalfOpenState: 1
+      #         failureRateThreshold: 50
+      #         waitDurationInOpenState: 5000
